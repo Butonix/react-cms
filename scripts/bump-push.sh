@@ -1,7 +1,7 @@
 #!/bin/sh
 
 
-# bump --no-tags --patch
+bump --no-tags --patch
 
 NEW_VERSION=`cat package.json | grep version | sed 's/"//g' | sed 's/,//g' | sed 's/  version: /v./g'`
 
