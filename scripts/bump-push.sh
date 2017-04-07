@@ -7,5 +7,5 @@ NEW_VERSION=`cat package.json | grep version | sed 's/"//g' | sed 's/,//g' | sed
 
 echo git commit -m \"[$NEW_VERSION] $1\"
 git add .
-git commit --message=\"[$NEW_VERSION] $1\"
+git commit --message="[$NEW_VERSION] $1"
 git push
