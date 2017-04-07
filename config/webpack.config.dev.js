@@ -8,6 +8,7 @@ var InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin');
 var WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin');
 var getClientEnvironment = require('./env');
 var paths = require('./paths');
+var path = require('path');
 
 
 
@@ -84,7 +85,14 @@ module.exports = {
     alias: {
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
-      'react-native': 'react-native-web'
+      'react-native': 'react-native-web',
+      'actions': path.join(paths.appSrc, 'actions'),
+      'assets': path.join(paths.appSrc, 'assets'),
+      'components': path.join(paths.appSrc, 'components'),
+      'constants': path.join(paths.appSrc, 'constants'),
+      'containers': path.join(paths.appSrc, 'containers'),
+      'reducers': path.join(paths.appSrc, 'reducers'),
+      'store': path.join(paths.appSrc, 'store')
     }
   },
   
