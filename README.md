@@ -68,5 +68,11 @@ Create *.eslintrc.json* with following content
   "extends": "react-app"
 }
 ```
+## Migrate to webpack2
+```
+$ yarn upgrade webpack --dev
+```
+Follow instructions [here](http://javascriptplayground.com/blog/2016/10/moving-to-webpack-2/) and [here](https://webpack.js.org/guides/migrating/)
+
 
 
