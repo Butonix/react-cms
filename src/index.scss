@@ -1,0 +1,22 @@
+@import "~assets/styles/variables";
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+  color: $lp-primary-color;
+}
+
+nav {
+  a {
+    font-weight: normal;
+    &.active {
+      font-weight: bold;
+    }
+  }
+}

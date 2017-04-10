@@ -1,9 +1,17 @@
 import React, { PropTypes } from 'react'
 
+import './Page.scss';
+
 const Page = (props) => {
   console.log(props)
   return (
-    <h1>{props.match.params.id || props.title}</h1>
+    <div className="page">
+      <h1>{props.match.params.id || props.title}</h1>
+      <p>
+        page content
+      </p>
+    </div>
+
   )
 }
 
