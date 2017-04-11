@@ -1,6 +1,6 @@
 {
   "name": "react-cms",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "private": true,
   "author": {
     "name": "Luca Pulira",
@@ -9,18 +9,26 @@
   },
   "license": "SEE LICENSE IN LICENSE.md",
   "dependencies": {
+    "babel-plugin-system-import-transformer": "^3.1.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-router": "^4.0.0",
-    "react-router-dom": "^4.0.0"
+    "react-router-dom": "^4.0.0",
+    "react-router-server": "^4.0.0"
   },
   "devDependencies": {
     "autoprefixer": "6.7.2",
+    "babel-cli": "^6.24.1",
     "babel-core": "6.22.1",
     "babel-eslint": "7.1.1",
     "babel-jest": "18.0.0",
     "babel-loader": "6.2.10",
+    "babel-plugin-module-alias": "^1.6.0",
+    "babel-plugin-module-resolver": "^2.7.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "babel-preset-react-app": "^2.2.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-register": "^6.24.1",
     "babel-runtime": "^6.20.0",
     "case-sensitive-paths-webpack-plugin": "1.1.4",
     "chalk": "1.1.3",
@@ -29,6 +37,7 @@
     "css-loader": "0.26.1",
     "detect-port": "1.1.0",
     "dotenv": "2.0.0",
+    "ejs": "^2.5.6",
     "eslint": "3.16.1",
     "eslint-config-react-app": "^0.6.2",
     "eslint-loader": "1.6.0",
@@ -50,6 +59,7 @@
     "react-dev-utils": "^0.5.2",
     "sass-lint": "^1.10.2",
     "sass-loader": "^6.0.3",
+    "stats-webpack-plugin": "^0.6.0",
     "style-loader": "0.13.1",
     "url-loader": "0.5.7",
     "webpack": "^2.3.3",
@@ -61,7 +71,10 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
-    "deploy:patch": "/bin/sh scripts/bump-push.sh"
+    "deploy:patch": "/bin/sh scripts/bump-push.sh",
+    "build_server": "babel-node -- node_modules/.bin/webpack",
+    "prestart_server": "npm run build_server",
+    "start_server": "babel-node --plugins system-import-transformer -- src/server.js"
   },
   "jest": {
     "collectCoverageFrom": [
