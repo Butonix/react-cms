@@ -1,17 +1,22 @@
 import React, { PropTypes } from 'react'
 import _ from 'lodash'
 import { NavLink } from 'react-router-dom'
-import './Header.scss';
+import './Header.scss'
 
 
 const Header = (props) => {
-  const links = props.pages.map((p) => {
-    return <NavLink key={p.slug} to={`/${p.slug}`}>{_.capitalize(p.title)}</NavLink>
-  })
+  console.log(props.pages)
+  const { pages } = props
+  let links = []
+  if (pages) {
+    links = _.flatMap(props.pages, (p) => {
+      return <NavLink key={p.slug} to={`/${p.slug}`}>{_.capitalize(p.title)}</NavLink>
+    })
+  }
   return (
     <div>
       <nav className="header-nav">
-        <NavLink exact to="/">Home</NavLink>
+        <NavLink exact to="/"><i className="material-icons">home</i>Home</NavLink>
         {links}
       </nav>
     </div>
@@ -19,11 +24,11 @@ const Header = (props) => {
 }
 
 Header.propTypes = {
-  pages: PropTypes.array
+  pages: PropTypes.object
 }
 
 Header.defaultProps = {
-  pages: []
+  pages: null
 }
 
 export default Header

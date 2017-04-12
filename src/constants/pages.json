@@ -1,17 +1,26 @@
-[
-  {
+{
+  "page-one": {
+    "showTitle": true,
     "title": "page one",
     "slug": "page-one",
-    "body": "body"
+    "body": "## body\npage one"
   },
-  {
+  "page-two": {
+    "showTitle": true,
     "title": "page two",
     "slug": "page-two",
-    "body": "body"
+    "body": "## body\npage two"
   },
-  {
+  "page-three": {
+    "showTitle": true,
     "title": "page three",
     "slug": "page-three",
-    "body": "body"
+    "body": "## body\npage three"
+  },
+  "docs-advanced-features": {
+    "showTitle": false,
+    "title": "Advanced Features",
+    "slug": "docs-advanced-features",
+    "body": "**Advanced Features** \n## React Router 4.0 \n``` \n$ yarn add react-router react-router-dom \n``` \nReact Router Server \n``` $ yarn add react-router-server \n``` \n## Useful libraries \n#### [Lodash](https://lodash.com/) \nA modern JavaScript utility library delivering modularity, performance & extras. \n``` \n$ yarn add lodash \n``` \n#### [react-markdown](https://github.com/rexxars/react-markdown) \nRenders Markdown as pure React components \n``` \n$ yarn add react-markdown \n```"
   }
-]
+}

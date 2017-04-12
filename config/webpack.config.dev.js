@@ -3,6 +3,7 @@
 var autoprefixer = require('autoprefixer');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var HelmetWebpackPlugin = require('helmet-webpack-plugin').default;
 var CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 var InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin');
 var WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin');
@@ -21,8 +22,6 @@ var publicPath = '/';
 var publicUrl = '';
 // Get environment variables to inject into our app.
 var env = getClientEnvironment(publicUrl);
-
-console.log(paths.nodePaths);
 
 // This is the development configuration.
 // It is focused on developer experience and fast rebuilds.
@@ -91,9 +90,13 @@ module.exports = {
       'components': path.join(paths.appSrc, 'components'),
       'constants': path.join(paths.appSrc, 'constants'),
       'containers': path.join(paths.appSrc, 'containers'),
+      'libs': path.join(paths.appSrc, 'libs'),
       'reducers': path.join(paths.appSrc, 'reducers'),
       'store': path.join(paths.appSrc, 'store')
     }
+  },
+  resolveLoader: {
+    moduleExtensions: ['-loader']
   },
   
   module: {
@@ -130,9 +133,10 @@ module.exports = {
           /\.svg$/,
           // added by sass support
           /\.sass$/,
-          /\.scss$/
+          /\.scss$/,
+          /\.(svg|png|jpg|woff|woff2|eot|ttf)$/
         ],
-        loader: 'url',
+        loader: 'url-loader',
         query: {
           limit: 10000,
           name: 'static/media/[name].[hash:8].[ext]'
@@ -159,7 +163,10 @@ module.exports = {
       // css sass scss support
       {
         test: /\.s?(a|c)ss$/,
-        include: paths.appSrc,
+        include: [
+            paths.appSrc,
+            "./node_modules/material-design-icons/iconfont"
+        ],
         loaders: [
           {
             loader: "style-loader"
@@ -178,6 +185,9 @@ module.exports = {
             }
           },
           {
+            loader: 'resolve-url-loader'
+          },
+          {
             loader: "sass-loader",
             options: {
               sourceMap: true
@@ -193,10 +203,23 @@ module.exports = {
       },
       // "file" loader for svg
       {
-        test: /\.svg$/,
+        test: /\.(svg|png|jpg|woff|woff2|eot|ttf)(\?v=[a-z0-9]\.[a-z0-9]\.[a-z0-9])?$/,
+        exclude: [
+          path.join(paths.appNodeModules, "material-design-icons/iconfont")
+        ],
         loader: 'file-loader',
         query: {
           name: 'static/media/[name].[hash:8].[ext]'
+        }
+      },
+      {
+        test: /\.(svg|png|jpg|woff|woff2|eot|ttf)(\?v=[a-z0-9]\.[a-z0-9]\.[a-z0-9])?$/,
+        include: [
+          path.join(paths.appNodeModules, "material-design-icons/iconfont")
+        ],
+        loader: 'file-loader',
+        query: {
+          name: 'static/fonts/[name].[ext]'
         }
       }
       // ** STOP ** Are you adding a new loader?
@@ -224,11 +247,20 @@ module.exports = {
     // The public URL is available as %PUBLIC_URL% in index.html, e.g.:
     // <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
     // In development, this will be an empty string.
+
     new InterpolateHtmlPlugin(env.raw),
     // Generates an `index.html` file with the <script> injected.
     new HtmlWebpackPlugin({
       inject: true,
       template: paths.appHtml,
+    }),
+    new HelmetWebpackPlugin({
+      helmetProps: {
+        htmlAttributes: {lang: 'en'},
+        link: [
+          // {rel: 'stylesheet', href: 'https://fonts.googleapis.com/icon?family=Material+Icons'}
+        ]
+      }
     }),
     // Makes some environment variables available to the JS code, for example:
     // if (process.env.NODE_ENV === 'development') { ... }. See `./env.js`.

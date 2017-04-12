@@ -1,16 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from 'containers/App'
-import { BrowserRouter } from 'react-router-dom'
+import materiaFontWoff2 from 'material-design-icons/iconfont/MaterialIcons-Regular.woff2'
+import materiaFontWoff from 'material-design-icons/iconfont/MaterialIcons-Regular.woff'
+import materiaFontTff from 'material-design-icons/iconfont/MaterialIcons-Regular.ttf'
+import materiaFontEot from 'material-design-icons/iconfont/MaterialIcons-Regular.eot'
 import './index.scss'
 
-
 ReactDOM.render(
-  (
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  ),
+  <App />,
   document.getElementById('root')
 )
 
