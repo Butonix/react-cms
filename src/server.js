@@ -1,13 +1,13 @@
-import React from 'react';
-import App from '../build/server/app';
-import { renderToString, extractModules } from 'react-router-server';
-import { StaticRouter } from 'react-router';
-import express from 'express';
-import path from 'path';
-import stats from '../build/public/stats.json';
+import React from 'react'
+import App from '../build/server/app'
+import { renderToString, extractModules } from 'react-router-server'
+import { StaticRouter } from 'react-router'
+import express from 'express'
+import path from 'path'
+import stats from '../build/public/stats.json'
 
-const app = express();
-app.use(express.static(path.join(__dirname, '..', 'build', 'public')));
+const app = express()
+app.use(express.static(path.join(__dirname, '..', 'build', 'public')))
 
 app.get('/*', function (req, res) {
   if (req.url) {
@@ -19,7 +19,7 @@ app.get('/*', function (req, res) {
       >
         <App/>
       </StaticRouter>
-    );
+    )
 
     renderToString(server)
       .then(({ html, state, modules }) => {
@@ -29,7 +29,7 @@ app.get('/*', function (req, res) {
           })
           res.end()
         } else {
-          const extracted = extractModules(modules, stats);
+          const extracted = extractModules(modules, stats)
           res.render(
             path.join(__dirname, '..', 'index.ejs'),
             {
@@ -38,13 +38,13 @@ app.get('/*', function (req, res) {
               files: [].concat.apply([], extracted.map(module => module.files)),
               modules: extracted
             }
-          );
+          )
         }
       })
-      .catch(err => console.error(err));
+      .catch(err => console.error(err))
   }
-});
+})
 
 app.listen(3000, function () {
-  console.log('Example site listening on 3000!');
-});
+  console.log('Example site listening on 3000!')
+})

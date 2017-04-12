@@ -5,6 +5,11 @@ $ yarn add react-router react-router-dom
 ```
 React Router Server
 ```
-$ yarn add babel-plugin-webpack-alias
 $ yarn add react-router-server
+```
+## Useful libraries
+#### [Lodash](https://lodash.com/)
+A modern JavaScript utility library delivering modularity, performance & extras.
+```
+$ yarn add lodash
 ```

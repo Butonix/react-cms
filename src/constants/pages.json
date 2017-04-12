@@ -1,0 +1,17 @@
+[
+  {
+    "title": "page one",
+    "slug": "page-one",
+    "body": "body"
+  },
+  {
+    "title": "page two",
+    "slug": "page-two",
+    "body": "body"
+  },
+  {
+    "title": "page three",
+    "slug": "page-three",
+    "body": "body"
+  }
+]
