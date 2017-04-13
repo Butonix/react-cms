@@ -1,3 +1,5 @@
+@import "~assets/styles/variables";
+
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
@@ -5,10 +7,11 @@
 
 .App-header {
   background-color: #222;
-  height: 150px;
-  padding: 20px;
+  @include lp-gradient('default');
+  height: calc(#{$lp-hero-height} - 4rem);
+  padding: 2rem;
   color: white;
   h2 {
-    color: lightgray;
+    color: $lp-light-theme-color;
   }
 }

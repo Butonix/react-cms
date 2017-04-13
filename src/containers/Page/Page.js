@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react'
 import _ from 'lodash'
 import ReactMarkdown from 'react-markdown'
+import { FloatingButton } from 'components/Buttons'
 import PageObject from 'libs/PageObject'
 import config from 'constants'
 
@@ -18,6 +19,7 @@ const Page = (props) => {
       <div className="lp-floating-action-button"></div>
       {currentPage.showTitle &&  <h1>{_.startCase(currentPage.title)}</h1>}
       <ReactMarkdown source={currentPage.body} />
+      <FloatingButton />
     </div>
 
   )

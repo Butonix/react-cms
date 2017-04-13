@@ -258,6 +258,7 @@ module.exports = {
       helmetProps: {
         htmlAttributes: {lang: 'en'},
         link: [
+          // uncomment to enable remote download Materia Icons
           // {rel: 'stylesheet', href: 'https://fonts.googleapis.com/icon?family=Material+Icons'}
         ]
       }

@@ -1,8 +1,66 @@
-$lp-primary-color: #d50000;
-$lp-primary-light-color: #ff5131;
-$lp-primary-dark-color: #9c0000;
-$lp-secondary-color: #546e7A;
-$lp-secondary-light-color: #708690;
-$lp-secondary-dark-color: #1b3039;
+$lp-primary-color: #d500f9;
+$lp-primary-light-color: #ff5bff;
+$lp-primary-dark-color: #9e00c5;
+
+$lp-secondary-color: #4a148c;
+$lp-secondary-light-color: #7c43bd;
+$lp-secondary-dark-color: #12005e;
+
+$lp-alternative-color: #ff1744;
+$lp-alternative-light-color: #ff616f;
+$lp-alternative-dark-color: #c4001d;
+
+$lp-light-theme-color: #f5f5f5;
+$lp-light-theme-light-color: #ffffff;
+$lp-light-theme-dark-color: #c2c2c2;
+
+$lp-dark-theme-color: #37474f;
+$lp-dark-theme-light-color: #62727b;
+$lp-dark-theme-dark-color: #102027;
+
 $lp-fullwhite: #fff;
-$lp-background-ligth: #e1e2e1;
+
+$lp-top-menu-height: 4rem;
+$lp-hero-height: 12rem;
+
+@mixin lp-gradient($name) {
+  @if ($name == 'default') {
+    /***  CSS Gradient  ***/
+    /*  Chrome 1-9 and Safari 4-5.0  */
+    background-image: -webkit-gradient(linear, left top, left bottom,
+            color-stop(0.0, $lp-primary-color),
+            color-stop(0.500, $lp-alternative-color),
+            color-stop(1.0, $lp-secondary-color));
+
+    /*  Chrome 10+ Safari 5.1+ Mobile Safari  */
+    background-image: -webkit-linear-gradient(-45deg,
+            $lp-primary-color,
+            $lp-alternative-color 50.0%,
+            $lp-secondary-color);
+
+    /*  Firefox 3.6+  */
+    background-image: -moz-linear-gradient(-45deg,
+            $lp-primary-color,
+            $lp-alternative-color 50.0%,
+            $lp-secondary-color);
+
+    /*  IE 10+  */
+    background-image: -ms-linear-gradient(-45deg,
+            $lp-primary-color,
+            $lp-alternative-color 50.0%,
+            $lp-secondary-color);
+
+    /*  Opera 11.10+  */
+    background-image: -o-linear-gradient(-45deg,
+            $lp-primary-color,
+            $lp-alternative-color 50.0%,
+            $lp-secondary-color);
+
+    /*  W3C  */
+    background-image: linear-gradient(-45deg,
+            $lp-primary-color,
+            $lp-alternative-color 50.0%,
+            $lp-secondary-color);
+
+  }
+}

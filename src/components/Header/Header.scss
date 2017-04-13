@@ -5,12 +5,12 @@ nav.header-nav {
   flex: 1;
   align-items: center;
   justify-content: space-around;
-  min-height: 4rem;
+  min-height: $lp-top-menu-height;
   a {
     flex: 1;
     color: $lp-secondary-color;
     font-weight: normal;
-    min-height: 4rem;
+    min-height: $lp-top-menu-height;
     display: flex;
     flex: 1;
     flex-direction: column;
