@@ -28,7 +28,6 @@ class Page extends Component {
   }
 
   savePage = () => {
-    const { pages } = config
     const currentPage = this.loadPage()
     config.pages = { ...config.pages, [currentPage.slug]: Object.assign({}, this.state.editingPage) }
     console.log(config.pages)
@@ -68,7 +67,7 @@ class Page extends Component {
     return (
         <div className="page">
           {currentPage.showTitle && <h1>{_.startCase(currentPage.title)}</h1>}
-          <ReactMarkdown source={currentPage.body}/>
+          <ReactMarkdown className="page-body" source={currentPage.body}/>
           <FloatingButton
               editing={editing}
               onClick={this.handleEditClick}

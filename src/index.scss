@@ -60,6 +60,11 @@ a {
   color: $lp-primary-color;
 }
 
+pre {
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
 nav {
   a {
     font-weight: normal;

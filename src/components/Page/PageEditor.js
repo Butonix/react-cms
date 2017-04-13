@@ -1,10 +1,10 @@
 import React, { PropTypes, PureComponent } from 'react'
-import classNames from 'classnames'
+// import classNames from 'classnames'
 
 class PageEditor extends PureComponent {
-  constructor(props) {
-    super(props)
-  }
+  // constructor(props) {
+  //  super(props)
+  // }
 
   handleOnChange = (evt) => {
     evt.preventDefault();

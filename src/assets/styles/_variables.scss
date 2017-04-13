@@ -23,6 +23,8 @@ $lp-fullwhite: #fff;
 $lp-top-menu-height: 4rem;
 $lp-hero-height: 12rem;
 
+$lp-boxed-responsive: 1024px;
+
 @mixin lp-gradient($name) {
   @if ($name == 'default') {
     /*  W3C  */

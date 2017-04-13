@@ -1,7 +1,7 @@
 @import "~assets/styles/variables";
 
 .floating-actions {
-  position: absolute;
+  position: fixed;
   right: 1rem;
   bottom: 4rem;
   display: flex;
