@@ -38,6 +38,15 @@
   font-feature-settings: 'liga';
 }
 
+.primary {
+  color: $lp-fullwhite;
+  background-color: $lp-primary-color;
+}
+
+.secondary {
+  color: $lp-fullwhite;
+  background-color: $lp-secondary-color;
+}
 
 body {
   margin: 0;

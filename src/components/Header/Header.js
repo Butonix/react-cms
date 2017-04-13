@@ -5,7 +5,7 @@ import './Header.scss'
 
 
 const Header = (props) => {
-  console.log(props.pages)
+  // console.log(props.pages)
   const { pages } = props
   let links = []
   if (pages) {

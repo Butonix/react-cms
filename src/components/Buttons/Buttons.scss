@@ -1,21 +1,36 @@
 @import "~assets/styles/variables";
 
+.floating-actions {
+  position: absolute;
+  right: 1rem;
+  bottom: 4rem;
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  align-items: center;
+  .lp-button--floating {
+    &:not(:first-child) {
+      margin-left: 1rem;
+    }
+  }
+}
+
 .lp-button {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
   &.lp-button--floating {
     border: none;
+    flex: 0 0 3rem;
     width: 3rem;
     height: 3rem;
     border-radius: 49%;
     box-shadow: 1px 1px 4px 1px rgba(0,0,0,.4);
-    background-color: $lp-primary-color;
-    color: $lp-fullwhite;
-    position: absolute;
-    right: 1rem;
-    bottom: 1rem;
-    margin-bottom: 1rem;
+    transition: ease-out .3s;
     &:hover {
       box-shadow: none;
-      background-color: $lp-primary-light-color;
+      opacity: .9;
     }
   }
 

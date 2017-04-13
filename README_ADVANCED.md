@@ -19,7 +19,20 @@ Renders Markdown as pure React components
 $ yarn add react-markdown
 ```
 #### [helmet-webpack-plugin](https://github.com/janoist1/helmet-webpack-plugin)
+A document head manager for React
 ```
 $ yarn add react-helmet
 $ yarn add helmet-webpack-plugin
+```
+#### [classnames](https://github.com/JedWatson/classnames)
+A simple javascript utility for conditionally joining classNames together
+```
+$ yarn add classnames
+```
+## Development
+#### [Storybook](https://getstorybook.io/)
+UI Development Environment You'll ❤ to use
+```
+$ yarn global add getstorybook
+$ getstorybook
 ```

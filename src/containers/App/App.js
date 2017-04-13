@@ -1,18 +1,20 @@
 import React, { Component } from 'react'
 import { Route } from 'react-router-dom'
 import { BrowserRouter } from 'react-router-dom'
+import { Helmet } from 'react-helmet'
 import _ from 'lodash'
-import Page from 'containers/Page'
+import Page from 'components/Page'
 import './App.scss'
 import Header from 'components/Header'
 import HeroSection from 'components/HeroSection'
 import config from 'constants'
 import PageObject from 'libs/PageObject'
+import logo from 'assets/img/react-md-cms-logo_150.png'
 
 
 class App extends Component {
   render() {
-    console.log('config', config)
+    // console.log('config', config)
     const { pages } = config
     const { name, description } = config.appConfig
 
@@ -21,6 +23,14 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div className="App">
+          <Helmet
+            titleTemplate="%s - 7APP"
+            defaultTitle="react-md-cms"
+          >
+            <meta charSet="utf-8" />
+            <link rel="canonical" href="http://localhost:3000" />
+            <link rel="icon" href={logo} />
+          </Helmet>
           <Header pages={pages}/>
           <HeroSection title={name}/>
           <Route exact path="/" component={Page} defaultData={defaultData} pages={pages}/>

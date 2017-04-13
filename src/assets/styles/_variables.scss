@@ -25,37 +25,6 @@ $lp-hero-height: 12rem;
 
 @mixin lp-gradient($name) {
   @if ($name == 'default') {
-    /***  CSS Gradient  ***/
-    /*  Chrome 1-9 and Safari 4-5.0  */
-    background-image: -webkit-gradient(linear, left top, left bottom,
-            color-stop(0.0, $lp-primary-color),
-            color-stop(0.500, $lp-alternative-color),
-            color-stop(1.0, $lp-secondary-color));
-
-    /*  Chrome 10+ Safari 5.1+ Mobile Safari  */
-    background-image: -webkit-linear-gradient(-45deg,
-            $lp-primary-color,
-            $lp-alternative-color 50.0%,
-            $lp-secondary-color);
-
-    /*  Firefox 3.6+  */
-    background-image: -moz-linear-gradient(-45deg,
-            $lp-primary-color,
-            $lp-alternative-color 50.0%,
-            $lp-secondary-color);
-
-    /*  IE 10+  */
-    background-image: -ms-linear-gradient(-45deg,
-            $lp-primary-color,
-            $lp-alternative-color 50.0%,
-            $lp-secondary-color);
-
-    /*  Opera 11.10+  */
-    background-image: -o-linear-gradient(-45deg,
-            $lp-primary-color,
-            $lp-alternative-color 50.0%,
-            $lp-secondary-color);
-
     /*  W3C  */
     background-image: linear-gradient(-45deg,
             $lp-primary-color,

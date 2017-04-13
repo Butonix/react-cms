@@ -1,6 +1,6 @@
 {
   "name": "react-cms",
-  "version": "0.1.7",
+  "version": "0.2.0",
   "description": "Simple Markdown based CMS, developped by React Redux technology",
   "license": "MIT",
   "author": {
@@ -11,6 +11,7 @@
   "private": true,
   "dependencies": {
     "babel-plugin-system-import-transformer": "^3.1.0",
+    "classnames": "^2.2.5",
     "helmet-webpack-plugin": "^0.0.3",
     "lodash": "^4.17.4",
     "material-design-icons": "^3.0.1",
@@ -23,6 +24,7 @@
     "react-router-server": "^4.0.0"
   },
   "devDependencies": {
+    "@kadira/storybook": "^2.21.0",
     "autoprefixer": "6.7.2",
     "babel-cli": "^6.24.1",
     "babel-core": "6.22.1",
@@ -79,10 +81,14 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
-    "deploy:patch": "/bin/sh scripts/bump-push.sh",
+    "deploy:patch": "/bin/sh scripts/bump-push.sh --patch",
+    "deploy:minor": "/bin/sh scripts/bump-push.sh --minor",
+    "deploy:major": "/bin/sh scripts/bump-push.sh --major",
     "build:server": "babel-node -- node_modules/.bin/webpack --config webpack.config.server.js",
     "prestart:server": "npm run build:server",
-    "start:server": "babel-node --plugins system-import-transformer -- src/server.js"
+    "start:server": "babel-node --plugins system-import-transformer -- src/server.js",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "jest": {
     "collectCoverageFrom": [

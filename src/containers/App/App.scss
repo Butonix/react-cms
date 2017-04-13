@@ -1,9 +1,31 @@
+@import "~assets/styles/variables";
+
 .App {
   text-align: center;
 }
 
 .App-intro {
   font-size: large;
+}
+
+textarea {
+  font-size: 1rem;
+  border: .5rem solid rgba($lp-dark-theme-color, .2);
+  border-radius: 2px;
+  background-color: rgba($lp-light-theme-dark-color, .5);
+  color: $lp-dark-theme-color;
+  padding: 1rem;
+  box-sizing: border-box;
+  max-width: 900px;
+  width: 80%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  min-height: 200px;
+  &:focus {
+    border: .5rem solid $lp-light-theme-dark-color;
+    background-color: rgba($lp-light-theme-dark-color, .2);
+    color: $lp-dark-theme-color;
+  }
 }
 
 @keyframes App-logo-spin {

@@ -4,7 +4,12 @@
   display: flex;
   flex: 1;
   flex-direction: column;
-  min-height: calc(100vh - 280px);
+  min-height: calc(100vh - #{$lp-hero-height} - #{$lp-top-menu-height} - 4rem);
   background-color: $lp-light-theme-color;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.page-editor {
 
 }
