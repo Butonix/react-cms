@@ -87,7 +87,7 @@ class Page extends Component {
 
 Page.propTypes = {
   title: PropTypes.string,
-  defaultData: PropTypes.objectOf(PageObject)
+  defaultData: PropTypes.object
 }
 
 Page.defaultProps = {

@@ -7,6 +7,11 @@ React Router Server
 ```
 $ yarn add react-router-server
 ```
+## Redux
+```
+$ yarn add redux react-redux redux-thunk
+```
+then create *src/actions*, *src/reducers* and *src/store* folders
 ## Useful libraries
 #### [Lodash](https://lodash.com/)
 A modern JavaScript utility library delivering modularity, performance & extras.
@@ -28,6 +33,11 @@ $ yarn add helmet-webpack-plugin
 A simple javascript utility for conditionally joining classNames together
 ```
 $ yarn add classnames
+```
+#### [react-redux-toastr](https://github.com/diegoddox/react-redux-toastr)
+react-redux-toastr is a toastr message implemented with Redux
+```
+$ yarn add react-redux-toastr
 ```
 ## Development
 #### [Storybook](https://getstorybook.io/)

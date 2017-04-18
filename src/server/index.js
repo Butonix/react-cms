@@ -12,7 +12,9 @@ const cfg = require("./config.js")
 const app = express()
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.text());
+app.use(bodyParser.json({ type: 'application/json'}));
 app.use(morgan('combined'))
 app.use(auth.initialize())
 app.use(cors({ origin: true, credentials: true }))

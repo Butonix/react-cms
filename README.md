@@ -1,7 +1,14 @@
 # react-cms
 ## Table of Contents
 
-- [Updating to New Releases](#updating-to-new-releases)
+- [Create app](#create-app)
+- [Hot Module Reload](#hot-module-reload)
+- [SASS/SCSS Support](#sass-support)
+- [ESLint config](#eslint-config)
+- [Migrate to webpack2](#migrate-to-webpack2)
+---
+- [Advanced Features](README_ADVANCED.md)
+- [Server API](README_API_AUTH.md)
 
 ## Create app
 
