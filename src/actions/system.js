@@ -4,7 +4,12 @@ const MESSAGES = {
   CLEAN: 'MESSAGES.CLEAN'
 }
 
-export { MESSAGES }
+const SYSTEM = {
+  SHOW_DIALOG: 'SYSTEM.SHOW_DIALOG',
+  HIDE_DIALOG: 'SYSTEM.HIDE_DIALOG'
+}
+
+export { MESSAGES, SYSTEM }
 
 function addMessage(message) {
   const { type, text } = message
@@ -26,4 +31,17 @@ function cleanAllMessages() {
   }
 }
 
-export { addMessage, cancelLastMessage, cleanAllMessages }
+function showDialog(title, node, actions = []) {
+  return {
+    type: SYSTEM.SHOW_DIALOG,
+    payload: Object.assign({}, { title, node, actions })
+  }
+}
+
+function hideDialog(title = null) {
+  return {
+    type: SYSTEM.HIDE_DIALOG
+  }
+}
+
+export { addMessage, cancelLastMessage, cleanAllMessages, showDialog, hideDialog }

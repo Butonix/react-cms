@@ -1,6 +1,6 @@
 {
   "name": "react-cms",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Simple Markdown based CMS, developped by React Redux technology",
   "license": "MIT",
   "author": {
@@ -16,6 +16,7 @@
     "cors": "^2.8.3",
     "express": "^4.15.2",
     "express-unless": "^0.3.0",
+    "font-awesome": "FortAwesome/Font-Awesome",
     "helmet-webpack-plugin": "^0.0.3",
     "jwt-simple": "^0.5.1",
     "lodash": "^4.17.4",
@@ -24,6 +25,7 @@
     "passport": "^0.3.2",
     "passport-jwt": "^2.2.1",
     "react": "^15.4.2",
+    "react-addons-css-transition-group": "^15.5.2",
     "react-dom": "^15.4.2",
     "react-helmet": "^5.0.3",
     "react-markdown": "^2.5.0",
@@ -33,6 +35,7 @@
     "react-router-dom": "^4.0.0",
     "react-router-server": "^4.0.0",
     "redux": "^3.6.0",
+    "redux-form": "^6.6.3",
     "redux-thunk": "^2.2.0"
   },
   "devDependencies": {

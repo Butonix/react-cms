@@ -1,7 +1,8 @@
-import { MESSAGES } from 'actions/system'
+import { MESSAGES, SYSTEM } from 'actions/system'
 
 const initialState = {
-  messages: []
+  messages: [],
+  dialogNode: null
 }
 
 export { initialState }
@@ -33,6 +34,18 @@ const system = (state = initialState, action) => {
       return {
         ...state,
         messages: []
+      }
+    }
+    case SYSTEM.SHOW_DIALOG: {
+      return {
+          ...state,
+          dialogNode: Object.assign({}, payload)
+      }
+    }
+    case SYSTEM.HIDE_DIALOG: {
+      return {
+        ...state,
+        dialogNode: null
       }
     }
     default:

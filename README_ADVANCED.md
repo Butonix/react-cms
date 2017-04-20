@@ -39,6 +39,14 @@ react-redux-toastr is a toastr message implemented with Redux
 ```
 $ yarn add react-redux-toastr
 ```
+#### [react-addons-css-transition-group](https://facebook.github.io/react/docs/animation.html)
+```
+$ yarn add react-addons-css-transition-group
+```
+#### [redux-form](http://redux-form.com/)
+```
+$ yarn add redux-form
+```
 ## Development
 #### [Storybook](https://getstorybook.io/)
 UI Development Environment You'll ❤ to use

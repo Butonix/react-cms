@@ -25,6 +25,9 @@ $lp-hero-height: 12rem;
 
 $lp-boxed-responsive: 1024px;
 
+$lp-form-font-size: 1.2rem;
+$lp-form-line-height: calc(#{$lp-form-font-size} * 2);
+
 @mixin lp-gradient($name) {
   @if ($name == 'default') {
     /*  W3C  */

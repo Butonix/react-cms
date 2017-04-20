@@ -17,21 +17,104 @@
 
 .lp-button {
   display: flex;
-  flex: 1;
+  flex: 0;
   align-items: center;
   justify-content: center;
+  min-height: 2rem;
+  opacity: .8;
+
+  color: $lp-dark-theme-color;
+  border: 1px solid $lp-light-theme-color;
+  background-color: $lp-light-theme-color;
+
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: normal;
+  text-transform: capitalize;
+  padding: 0 $lp-form-font-size;
+
+
+  transition: opacity ease-out .3s;
+
+  &.lp-button--primary {
+    color: $lp-fullwhite;
+    border: 1px solid $lp-primary-color;
+    background-color: $lp-primary-color;
+  }
+  &.lp-button--secondary {
+    color: $lp-fullwhite;
+    border: 1px solid $lp-secondary-color;
+    background-color: $lp-secondary-color;
+  }
+
+  &.lp-button--outline {
+    color: $lp-dark-theme-color;
+    border: 1px solid $lp-dark-theme-color;
+    background-color: $lp-fullwhite;
+    &.lp-button--primary {
+      color: $lp-primary-color;
+      border: 1px solid $lp-primary-color;
+      background-color: $lp-fullwhite;
+    }
+    &.lp-button--secondary {
+      color: $lp-secondary-color;
+      border: 1px solid $lp-secondary-color;
+      background-color: $lp-fullwhite;
+    }
+  }
+
   &.lp-button--floating {
     border: none;
     flex: 0 0 3rem;
     width: 3rem;
     height: 3rem;
     border-radius: 49%;
-    box-shadow: 1px 1px 4px 1px rgba(0,0,0,.4);
+    box-shadow: 1px 1px 4px 1px rgba(0,0,0,.6);
     transition: ease-out .3s;
+  }
+  &:hover {
+    box-shadow: 1px 1px 3px 1px rgba(0,0,0,.6);
+    opacity: 1;
+    cursor: pointer;
+  }
+
+  &.lp-button--icon {
+    border: 1px solid transparent;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: none;
+    padding: .5rem;
     &:hover {
       box-shadow: none;
-      opacity: .9;
+      background-color: rgba($lp-light-theme-color, .9);
+      cursor: pointer;
+    }
+  }
+
+  .lp-button-icon--right {
+    margin-left: .5rem;
+  }
+
+  .lp-button-icon--left {
+    margin-right: .5rem;
+  }
+
+  &.lp-button--big {
+    flex: 0 0 calc(#{$lp-form-line-height} + 2px);
+    font-size: $lp-form-font-size;
+    line-height: $lp-form-line-height;
+  }
+
+  &.disabled {
+    opacity: .4;
+    background-color: $lp-dark-theme-light-color;
+    border: $lp-dark-theme-color;
+    &:hover {
+      box-shadow: none;
+      background-color: $lp-dark-theme-light-color;
+      cursor: default;
     }
   }
 
 }
+

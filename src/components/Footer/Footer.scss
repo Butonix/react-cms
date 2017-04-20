@@ -1,0 +1,16 @@
+@import "~assets/styles/variables";
+
+.lp-footer {
+  font-size: small;
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  min-height: 4rem;
+}
+
+.lp-footer-primary {
+  background-color: $lp-dark-theme-color;
+  color: $lp-fullwhite;
+}

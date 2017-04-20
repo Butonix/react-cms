@@ -9,7 +9,7 @@ const USER = {
 
 export { USER }
 
-function login(username, password) {
+function login({ username, password }) {
   return function(dispatch) {
     dispatch(loginRequest())
     return new Promise((resolve, reject) => {
@@ -31,7 +31,6 @@ function loginRequest() {
 }
 
 function loginSuccess(user) {
-  console.log(user)
   return {
     type: USER.LOGIN_RESOLVED,
     payload: user

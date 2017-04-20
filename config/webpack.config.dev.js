@@ -215,7 +215,8 @@ module.exports = {
       {
         test: /\.(svg|png|jpg|woff|woff2|eot|ttf)(\?v=[a-z0-9]\.[a-z0-9]\.[a-z0-9])?$/,
         include: [
-          path.join(paths.appNodeModules, "material-design-icons/iconfont")
+          path.join(paths.appNodeModules, "material-design-icons/iconfont"),
+          path.join(paths.appNodeModules, "font-awesome/fonts")
         ],
         loader: 'file-loader',
         query: {

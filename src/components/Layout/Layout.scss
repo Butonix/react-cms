@@ -1,0 +1,128 @@
+@import "~assets/styles/variables";
+@import '~react-redux-toastr/src/styles/index';
+
+.App {
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  font-size: 1rem;
+
+  .field-group {
+    display: flex;
+    flex: 1 0 auto;
+    flex-wrap: wrap;
+    width: 100%;
+    min-height: calc(#{$lp-form-line-height} + 2rem);
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: .5rem;
+    label {
+      flex: 1;
+      text-align: left;
+      font-size: $lp-form-font-size;
+      line-height: calc(#{$lp-form-line-height} + 2px);
+      margin-right: .5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: space-between;
+      align-self: flex-start;
+    }
+    input {
+      flex: 3;
+      font-size: $lp-form-font-size;
+      line-height: $lp-form-line-height;
+      padding: 0 .5rem;
+      box-shadow: none;
+      box-sizing: border-box;
+      border: 1px solid $lp-light-theme-color;
+      border-radius: 4px;
+      background-color: rgba($lp-light-theme-dark-color, .3);
+      color: $lp-dark-theme-dark-color;
+      &:focus {
+        background-color: $lp-fullwhite;
+        border: 1px solid $lp-light-theme-dark-color;
+      }
+    }
+    .field-input {
+      display: flex;
+      flex-direction: column;
+      flex: 4;
+      align-items: stretch;
+      justify-content: flex-start;
+      text-align: left;
+      .error-message {
+        font-size: .8rem;
+        padding: .5rem;
+        box-sizing: border-box;
+      }
+    }
+    &.field-group--centered {
+      justify-content: center;
+    }
+    &.field-error {
+      .field-input {
+        color: red;
+        input {
+          color: inherit;
+          border-color: inherit;
+        }
+        .error-message {
+          color: inherit;
+        }
+      }
+    }
+  }
+}
+
+textarea {
+  font-size: 1rem;
+  border: .5rem solid rgba($lp-dark-theme-color, .2);
+  border-radius: 2px;
+  background-color: rgba($lp-light-theme-dark-color, .5);
+  color: $lp-dark-theme-color;
+  padding: 1rem;
+  box-sizing: border-box;
+  max-width: 900px;
+  width: 80%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  min-height: 200px;
+  &:focus {
+    border: .5rem solid $lp-light-theme-dark-color;
+    background-color: rgba($lp-light-theme-dark-color, .2);
+    color: $lp-dark-theme-color;
+  }
+}
+
+.list {
+  display: flex;
+  flex: 1;
+  min-height: 3rem;
+  line-height: 3rem;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  .list-item {
+    flex: 1;
+    text-align: center;
+  }
+  .list-item:first-child {
+    text-align: left;
+  }
+  .list-item:last-child {
+    text-align: right;
+  }
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

@@ -6,6 +6,10 @@ import PageObject from 'libs/PageObject'
 import config from 'constants'
 import PageEditor from './PageEditor'
 
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import * as userActionCreators from 'actions/user'
+
 import './Page.scss'
 
 class Page extends Component {
@@ -30,7 +34,6 @@ class Page extends Component {
   savePage = () => {
     const currentPage = this.loadPage()
     config.pages = { ...config.pages, [currentPage.slug]: Object.assign({}, this.state.editingPage) }
-    console.log(config.pages)
     this.handleBodyCancel()
   }
 
@@ -61,25 +64,30 @@ class Page extends Component {
   }
 
   render() {
-
     const { editing, editingPage } = this.state
+    const { user } = this.props
     const currentPage = editing ? editingPage : this.loadPage()
     return (
-        <div className="page">
-          {currentPage.showTitle && <h1>{_.startCase(currentPage.title)}</h1>}
-          <ReactMarkdown className="page-body" source={currentPage.body}/>
-          <FloatingButton
-              editing={editing}
-              onClick={this.handleEditClick}
-              onCancel={this.handleBodyCancel}
-          />
-          {
-            editing && <PageEditor
-              pageContent={currentPage}
-              onChange={this.handleBodyChange}
+      <div className="page">
+        {currentPage.showTitle && <h1>{_.startCase(currentPage.title)}</h1>}
+        <ReactMarkdown className="page-body" source={currentPage.body}/>
+        {
+          (!user.isFetching && user.currentUser)
+          && (
+            <FloatingButton
+                editing={editing}
+                onClick={this.handleEditClick}
+                onCancel={this.handleBodyCancel}
             />
-          }
-        </div>
+          )
+        }
+        {
+          editing && <PageEditor
+            pageContent={currentPage}
+            onChange={this.handleBodyChange}
+          />
+        }
+      </div>
 
     )
   }
@@ -87,12 +95,29 @@ class Page extends Component {
 
 Page.propTypes = {
   title: PropTypes.string,
-  defaultData: PropTypes.object
+  defaultData: PropTypes.object,
+  user: PropTypes.object
 }
 
 Page.defaultProps = {
   title: 'No Title',
-  defaultData: new PageObject({ title: 'No title', slug: 'no-slug', body: 'No content' })
+  defaultData: new PageObject({ title: 'No title', slug: 'no-slug', body: 'No content' }),
+  user: {
+    isFetching: false,
+    currentUser: null
+  }
 }
 
-export default Page
+const mapStateToProps = (state, ownProps = {}) => {
+  // console.log(state); // state
+  // console.log(ownProps); // undefined
+  return {
+    user: state.user
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return { actions: bindActionCreators(userActionCreators, dispatch) }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Page)

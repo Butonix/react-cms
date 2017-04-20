@@ -5,27 +5,49 @@ import { NavLink, Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as userActionCreators from 'actions/user'
+import * as systemActionCreators from 'actions/system'
+
+import Loading from 'components/Loading'
+import LoginForm, { RemoteSubmitButton } from 'components/LoginForm'
 
 import './Header.scss'
 
 
 class Header extends Component {
 
-  handleLogin = (evt) => {
-    evt.preventDefault();
+  handleLoginSuccess = () => {
+    console.log('login success')
     const { actions } = this.props
-    actions.login('luca', 'adsada')
+    actions.hideDialog('Login')
+  }
+
+  handleLogin = (evt) => {
+    evt.preventDefault()
+    const { actions } = this.props
+    actions.showDialog('Login', (
+          <LoginForm
+            onSubmit={this.props.actions.login}
+            onSubmitSuccess={this.handleLoginSuccess}
+          />
+        ),
+        [ <RemoteSubmitButton /> ]
+    )
+    // actions.login('luca', 'adsada')
   }
 
   handleLogout = (evt) => {
-    evt.preventDefault();
+    evt.preventDefault()
     const { actions } = this.props
     actions.logout()
   }
 
+  handleNoAction = (evt) => {
+    evt.preventDefault()
+  }
+
   render() {
     // console.log(props.pages)
-    const { pages, isFetching, currentUser, userError } = this.props
+    const { pages, isFetching, currentUser } = this.props
 
     let links = []
     if (pages) {
@@ -36,7 +58,7 @@ class Header extends Component {
 
     const LoginButton = () => {
       if (isFetching) {
-        return <Link to="/login" disabled><div className="loader" /></Link>
+        return <Link to="#" className="disabled" onClick={this.handleNoAction}><Loading outline/></Link>
       } else {
         return (
             currentUser
@@ -47,7 +69,7 @@ class Header extends Component {
     }
 
     return (
-        <div>
+        <div className="lp-header">
           <nav className="header-nav">
             <NavLink exact to="/"><i className="material-icons">home</i>Home</NavLink>
             {links}
@@ -73,8 +95,8 @@ Header.defaultProps = {
 }
 
 const mapStateToProps = (state, ownProps = {}) => {
-  console.log(state); // state
-  console.log(ownProps); // undefined
+  // console.log(state); // state
+  // console.log(ownProps); // undefined
   return {
     currentUser: state.user.currentUser,
     isFetching: state.user.isFetching,
@@ -83,7 +105,7 @@ const mapStateToProps = (state, ownProps = {}) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return { actions: bindActionCreators(userActionCreators, dispatch) }
+  return { actions: bindActionCreators({ ...userActionCreators, ...systemActionCreators }, dispatch) }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header)

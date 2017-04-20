@@ -29,7 +29,7 @@ class PageEditor extends PureComponent {
 }
 
 PageEditor.propTypes = {
-  pageContent: PropTypes.object.isRequire,
+  pageContent: PropTypes.object.isRequired,
   onChange: PropTypes.onChange
 }
 

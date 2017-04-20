@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import App from 'containers/App'
 import 'assets/local-fonts'
+import 'assets/local-awesome-fonts'
 import './index.scss'
 
 ReactDOM.render(

@@ -1,10 +1,9 @@
-import { combineReducers } from 'redux'
 import system from './system'
 import user from './user'
 
-const rootReducer = combineReducers({
+const rootReducer = {
   system,
   user
-})
+}
 
 export default rootReducer

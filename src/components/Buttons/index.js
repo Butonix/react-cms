@@ -1,2 +1,3 @@
 import FloatingButton from './FloatingButton'
-export { FloatingButton }
+import Button from './Button'
+export { FloatingButton, Button }
