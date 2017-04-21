@@ -8,7 +8,8 @@ import * as userActionCreators from 'actions/user'
 import * as systemActionCreators from 'actions/system'
 
 import Loading from 'components/Loading'
-import LoginForm, { RemoteSubmitButton } from 'components/LoginForm'
+import LoginForm from 'components/LoginForm'
+import { RemoteSubmitButton } from 'components/Buttons'
 
 import './Header.scss'
 
@@ -30,7 +31,7 @@ class Header extends Component {
             onSubmitSuccess={this.handleLoginSuccess}
           />
         ),
-        [ <RemoteSubmitButton /> ]
+        [ <RemoteSubmitButton formId="login" /> ]
     )
     // actions.login('luca', 'adsada')
   }

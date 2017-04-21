@@ -1,3 +1,4 @@
 import FloatingButton from './FloatingButton'
 import Button from './Button'
-export { FloatingButton, Button }
+import RemoteSubmitButton from './RemoteSubmitButton'
+export { FloatingButton, Button, RemoteSubmitButton }

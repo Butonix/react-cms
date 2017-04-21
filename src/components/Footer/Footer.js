@@ -18,7 +18,7 @@ class Footer extends Component {
     })
     return (
       <div className={ classes }>
-        <div className="list">
+        <div className="list list--justified">
           <div className="list-item">Copyright © 2017 Luca Pulira - 7APP</div>
           <div className="list-item"><a href="https://github.com/lp741/react-cms">GitHub <i className="fa fa-github" aria-hidden="true" /></a></div>
         </div>

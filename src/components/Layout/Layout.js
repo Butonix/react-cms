@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
-import { Route } from 'react-router-dom'
+import { Route, BrowserRouter } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
 import _ from 'lodash'
 
@@ -39,41 +39,43 @@ class Layout extends Component {
     const { showDialog, dialogNode } = this.props
 
     return (
-      <div className="App">
-        <Helmet
-            titleTemplate="%s - 7APP"
-            defaultTitle="react-md-cms"
-        >
-          <meta charSet="utf-8" />
-          <link rel="canonical" href="http://localhost:3000" />
-          <link rel="icon" href={logo} />
-        </Helmet>
-        <Header pages={pages}/>
-        <HeroSection title={name}/>
-        <Route exact path="/" component={Page} defaultData={defaultData} pages={pages}/>
-        <Route path="/:id" component={Page} defaultData={defaultData} pages={pages}/>
-        <Footer />
-        <ReactCSSTransitionGroup
-            component="div"
-            className="lp-dialog"
-            transitionName="modal"
-            transitionEnterTimeout={300}
-            transitionLeaveTimeout={300}
-        >
-          {
-            showDialog
-            && (
-                <Dialog
-                    onClose={this.handleCloseDialog}
-                    title={dialogNode.title}
-                    actions={dialogNode.actions}
-                >
-                  { dialogNode.node }
-                </Dialog>
-            )
-          }
-        </ReactCSSTransitionGroup>
-      </div>
+      <BrowserRouter>
+        <div className="App">
+          <Helmet
+              titleTemplate="%s - 7APP"
+              defaultTitle="react-md-cms"
+          >
+            <meta charSet="utf-8" />
+            <link rel="canonical" href="http://localhost:3000" />
+            <link rel="icon" href={logo} />
+          </Helmet>
+          <Header pages={pages}/>
+          <HeroSection title={name}/>
+          <Route exact path="/" component={Page} defaultData={defaultData} pages={pages}/>
+          <Route path="/:id" component={Page} defaultData={defaultData} pages={pages}/>
+          <Footer />
+          <ReactCSSTransitionGroup
+              component="div"
+              className="lp-dialog"
+              transitionName="modal"
+              transitionEnterTimeout={300}
+              transitionLeaveTimeout={300}
+          >
+            {
+              showDialog
+              && (
+                  <Dialog
+                      onClose={this.handleCloseDialog}
+                      title={dialogNode.title}
+                      actions={dialogNode.actions}
+                  >
+                    { dialogNode.node }
+                  </Dialog>
+              )
+            }
+          </ReactCSSTransitionGroup>
+        </div>
+      </BrowserRouter>
     )
   }
 }
@@ -91,7 +93,7 @@ Layout.propTypes = {
 Layout.defaultProps = {
   currentUser: null,
   userError: null,
-  dialogNode: null
+  dialogNode: {}
 }
 
 const mapStateToProps = (state, ownProps = {}) => {

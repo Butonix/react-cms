@@ -112,13 +112,17 @@ textarea {
   padding-right: 1rem;
   .list-item {
     flex: 1;
-    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
   }
-  .list-item:first-child {
-    text-align: left;
-  }
-  .list-item:last-child {
-    text-align: right;
+  &.list--justified {
+    .list-item:first-child {
+      justify-content: flex-start;
+    }
+    .list-item:last-child {
+      justify-content: flex-end;
+    }
   }
 }
 

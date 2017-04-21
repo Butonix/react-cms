@@ -62,20 +62,26 @@
       background-color: $lp-fullwhite;
     }
   }
-
+  &:hover {
+    box-shadow: 1px 1px 3px 1px rgba(0,0,0,.6);
+    opacity: 1;
+    cursor: pointer;
+  }
+  
   &.lp-button--floating {
     border: none;
     flex: 0 0 3rem;
     width: 3rem;
     height: 3rem;
     border-radius: 49%;
+    opacity: .6;
     box-shadow: 1px 1px 4px 1px rgba(0,0,0,.6);
     transition: ease-out .3s;
-  }
-  &:hover {
-    box-shadow: 1px 1px 3px 1px rgba(0,0,0,.6);
-    opacity: 1;
-    cursor: pointer;
+    &:hover {
+      box-shadow: none;
+      opacity: 1;
+      cursor: pointer;
+    }
   }
 
   &.lp-button--icon {

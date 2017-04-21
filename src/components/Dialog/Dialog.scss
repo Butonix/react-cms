@@ -25,7 +25,7 @@
   width: 90%;
   max-width: $lp-boxed-responsive;
   background: $lp-fullwhite;
-  box-shadow: 1px 1px 6px 2px $lp-dark-theme-color;
+  box-shadow: 0px 4px 6px 4px rgba($lp-dark-theme-dark-color, .6);
   border-radius: 4px;
 
   .modal-dialog-header {

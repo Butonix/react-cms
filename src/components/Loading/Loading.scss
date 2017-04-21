@@ -6,7 +6,8 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  flex: 1;
+  flex: 0 0 auto;
+  min-width: 2rem;
 }
 
 /* bar loader */
@@ -19,6 +20,7 @@
   animation: load1 2s infinite ease-in-out;
   border-radius: 30px;
   box-sizing: border-box;
+  min-height: $lp-form-font-size;
   &:nth-child(0) {
     animation-delay: -0.16s;
   }

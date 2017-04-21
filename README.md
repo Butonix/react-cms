@@ -6,13 +6,15 @@
 - [SASS/SCSS Support](#sass-support)
 - [ESLint config](#eslint-config)
 - [Migrate to webpack2](#migrate-to-webpack2)
----
-- [Advanced Features](README_ADVANCED.md)
-- [Server API](README_API_AUTH.md)
+- [Advanced Features](docs/README_ADVANCED.md)
+- [Server API](docs/README_API_AUTH.md)
+
+
+![react-cms gif](docs/assets/react-cms.gif)
 
 ## Create app
 
-Follow *create-react-app* instructions [here](CREATE_REACT_APP.md)
+Follow *create-react-app* instructions [here](docs/CREATE_REACT_APP.md)
 
 ## Hot Module Reload
 Add following content to the bottom of render container *src/index.js*

@@ -15,7 +15,7 @@ function login({ username, password }) {
     return new Promise((resolve, reject) => {
       setTimeout(function(){
         resolve({ username: 'Luca', email: 'luca@sample.xx' })
-      }, 5000);
+      }, 1000);
     }).then((user) => {
       dispatch(loginSuccess(user))
     }).catch((error) => {
@@ -51,7 +51,7 @@ function logout() {
     return new Promise((resolve, reject) => {
       setTimeout(function(){
         resolve()
-      }, 3000);
+      }, 1000);
     }).then(() => {
       dispatch(logoutSuccess())
     }).catch((error) => {
