@@ -1,6 +1,6 @@
 {
   "name": "react-cms",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "Simple Markdown based CMS, developped by React Redux technology",
   "license": "MIT",
   "author": {
