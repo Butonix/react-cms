@@ -16,7 +16,7 @@
 
 ```
 $ npm install
-$ npm start:api
+$ npm run start:api
 
 on second terminal 
 
