@@ -3,8 +3,8 @@ const users = {
     [{
       id: 1,
       name: "John",
-      email: "john@mail.com",
-      password: "john123"
+      email: "demo@sample.com",
+      password: "demo"
     }, {
       id: 2,
       name: "Sarah",

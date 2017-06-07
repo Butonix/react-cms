@@ -63,7 +63,7 @@ class Header extends Component {
       } else {
         return (
             currentUser
-            ? <NavLink exact to="/profile" onClick={this.handleLogout}><i className="material-icons">person</i>{currentUser.username}</NavLink>
+            ? <NavLink exact to="/profile" onClick={this.handleLogout}><i className="material-icons">person</i>{currentUser.name}</NavLink>
             : <Link to="/login" onClick={this.handleLogin}><i className="material-icons">lock</i>Login</Link>
         )
       }

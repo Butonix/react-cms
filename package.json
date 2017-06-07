@@ -18,6 +18,7 @@
     "express-unless": "^0.3.0",
     "font-awesome": "FortAwesome/Font-Awesome",
     "helmet-webpack-plugin": "^0.0.3",
+    "jwt-decode": "^2.2.0",
     "jwt-simple": "^0.5.1",
     "lodash": "^4.17.4",
     "material-design-icons": "^3.0.1",
@@ -90,7 +91,7 @@
     "webpack": "^2.3.3",
     "webpack-dev-server": "1.16.2",
     "webpack-manifest-plugin": "1.1.0",
-    "whatwg-fetch": "2.0.2"
+    "whatwg-fetch": "^2.0.3"
   },
   "scripts": {
     "start": "node scripts/start.js",

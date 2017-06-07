@@ -1,3 +1,6 @@
+import { ApiClient } from 'libs'
+import jwt from 'jwt-decode'
+
 const USER = {
   LOGIN_REQUESTED: 'USER.LOGIN_REQUESTED',
   LOGIN_RESOLVED: 'USER.LOGIN_RESOLVED',
@@ -9,15 +12,34 @@ const USER = {
 
 export { USER }
 
-function login({ username, password }) {
+function login({ email: username, password }) {
+  console.log('username', username, password)
   return function(dispatch) {
     dispatch(loginRequest())
     return new Promise((resolve, reject) => {
-      setTimeout(function(){
-        resolve({ username: 'Luca', email: 'luca@sample.xx' })
-      }, 1000);
+      const restClient = new ApiClient({ baseUrl: 'http://localhost:4000' })
+      restClient.login(username, password)
+      .then(function(response) {
+        const dataRes = response.text()
+        if(response.status > 210) {
+          console.log('reject', dataRes)
+          dispatch(loginError('error'))
+        }
+        return dataRes
+      })
+      .then(function(res) {
+        console.log('res', res)
+        resolve(res)
+      }).catch(function(error){
+        console.error('error', error)
+        reject(error)
+      })
     }).then((user) => {
-      dispatch(loginSuccess(user))
+      if(user) {
+        const data = jwt(user)
+        console.log(data)
+        dispatch(loginSuccess(data))
+      }
     }).catch((error) => {
       dispatch(loginError(error))
     })

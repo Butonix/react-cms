@@ -7,7 +7,7 @@ import Loading from 'components/Loading'
 
 class RemoteSubmitButton extends Component {
   render() {
-    console.log('remote button', this.props)
+    // console.log('remote button', this.props)
 
     const { dispatch, submitting, submitSucceeded, formId } = this.props
 

@@ -6,6 +6,7 @@ function submit(values) {
   return sleep(1000) // simulate server latency
       .then(() => {
         if (![ 'luca@sample.com', 'paul', 'george', 'ringo' ].includes(values.email)) {
+          debugger
           throw new SubmissionError({ username: 'User does not exist', _error: 'Login failed!' })
         } else if (values.password !== 'example') {
           throw new SubmissionError({ password: 'Wrong password', _error: 'Login failed!' })

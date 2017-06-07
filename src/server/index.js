@@ -92,7 +92,9 @@ app.post("/api/token", function(req, res) {
 
     if (validate) {
       const payload = {
-        id: user.id
+        id: user.id,
+        name: user.name,
+        email: user.email
       }
       const token = jwt.encode(payload, cfg.jwtSecret)
       res.json({
