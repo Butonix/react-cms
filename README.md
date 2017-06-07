@@ -12,6 +12,20 @@
 
 ![react-cms gif](docs/assets/react-cms.gif)
 
+## Try Demo
+
+```
+$ npm install
+$ npm start:api
+$ npm start
+
+or
+
+$ yarn
+$ yarn run start:api
+$ yarn start
+```
+
 ## Create app
 
 Follow *create-react-app* instructions [here](docs/CREATE_REACT_APP.md)
