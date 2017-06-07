@@ -17,12 +17,18 @@
 ```
 $ npm install
 $ npm start:api
+
+on second terminal 
+
 $ npm start
 
 or
 
 $ yarn
-$ yarn run start:api
+$ yarn start:api
+
+on second terminal 
+
 $ yarn start
 ```
 
